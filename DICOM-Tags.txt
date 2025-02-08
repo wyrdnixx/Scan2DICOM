@@ -1,0 +1,46 @@
+﻿            var dataset = new DicomDataset
+            {
+            // { DicomTag.SpecificCharacterSet,  "ISO_IR 6" },
+            // { DicomTag.InstanceNumber, 1 },
+            { DicomTag.InstanceCreationDate, DateTime.Now },
+            { DicomTag.InstanceCreationTime, DateTime.Now },
+            { DicomTag.SOPClassUID, DicomUID.EncapsulatedPDFStorage },
+            // { DicomTag.SOPInstanceUID, "" },
+            // { DicomTag.ContentDate, DateTime.Now },
+            // { DicomTag.ContentTime, DateTime.Now },
+            { DicomTag.AcquisitionDateTime, DateTime.Now },
+            // { DicomTag.AccessionNumber, "1234"},
+            { DicomTag.Modality, "DOC" },
+            // { DicomTag.ConversionType, "WSD" },
+            // { DicomTag.ImageLaterality, "" },
+            { DicomTag.Manufacturer, "JoHe" },
+            { DicomTag.ManufacturerModelName, "Scan2DICOMSoftware" },
+
+            // { DicomTag.ReferringPhysicianName, (string)null },
+            { DicomTag.PerformingPhysicianName, tbDokCreator.Text },
+
+            //{ DicomTag.PatientName, "Patient Name"},
+            { DicomTag.PatientName, tbPatName.Text},
+            { DicomTag.PatientID, tbPatId.Text },
+            { DicomTag.PatientBirthDate, lvResults.SelectedItems[0].SubItems[2].Text },
+            { DicomTag.PatientSex,lvResults.SelectedItems[0].SubItems[3].Text },
+            // { DicomTag.PatientAge, "" },
+            // { DicomTag.PatientWeight, "" },
+            // { DicomTag.PatientAddress, "" },
+
+            // { DicomTag.StudyID, "2345" },
+            { DicomTag.StudyDate, String.Format("{yyyyMMdd}",dpDokDate) },
+            // { DicomTag.StudyTime, "093900" },
+            { DicomTag.StudyDescription, "imported PDF File" },
+
+            // { DicomTag.SeriesNumber, "1234" },
+            { DicomTag.SeriesDate, DateTime.Now },
+            { DicomTag.SeriesTime, DateTime.Now },
+            { DicomTag.SeriesDescription, ""},
+            { DicomTag.SeriesInstanceUID, generator.Generate( studyUID ) },
+
+            // { DicomTag.BurnedInAnnotation, "YES" },
+            // { DicomTag.VerificationFlag, "VERIFIED" },
+            { DicomTag.MIMETypeOfEncapsulatedDocument, "application/pdf" },
+            { DicomTag.EncapsulatedDocument, pdf }
+            };
