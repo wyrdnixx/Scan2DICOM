@@ -9,7 +9,7 @@ namespace Scan2Dicom
     static class Program
     {
         /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung. Scan2DICOM
+        /// Der Haupteinstiegspunkt für die Anwendung. Scan2DICOM...
         /// </summary>
         [STAThread]
         static void Main()
