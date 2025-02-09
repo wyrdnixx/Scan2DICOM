@@ -20,3 +20,6 @@ namespace Scan2Dicom
         }
     }
 }
+
+
+// NuGet\Install-Package fo-dicom.Desktop
