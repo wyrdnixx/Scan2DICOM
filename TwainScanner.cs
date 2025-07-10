@@ -68,6 +68,23 @@ namespace Scan2Dicom
 
             var appId = TWIdentity.CreateFromAssembly(DataGroups.Image, Assembly.GetEntryAssembly());
             _twain = new TwainSession(appId);
+
+            /*
+             * | Zahl | Bedeutung(TWAIN State) | 
+             * | ------| --------------------------------| 
+             * | 1 | Pre - Session(Vor der Initialisierung) | 
+             * | 2 | Source Manager Loaded           | 
+             * | 3 | Source Manager Open             | 
+             * | 4 | Source Open(Scanner ausgewählt und geöffnet) | 
+             * | 5 | Source Enabled(Scanner bereit für Scan) | 
+             * | 6 | Transfer Ready(Scan abgeschlossen, Bilddaten bereit) | 
+             * | 7 | Transferring(Bilddaten werden übertragen) | 
+             * | 8 | Transfer Done(Übertragung abgeschlossen) | 
+             * | 9 | Source Closed | 
+             * | 10 | Source Manager Closed           |
+             * */
+
+
             _twain.StateChanged += (s, e) =>
             {
                 //PlatformInfo.Current.Log.Info("State changed to " + _twain.State + " on thread " + Thread.CurrentThread.ManagedThreadId);
